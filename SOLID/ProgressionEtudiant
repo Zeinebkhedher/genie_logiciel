@@ -1,0 +1,37 @@
+package SOLID;
+
+public class ProgressionEtudiant {
+
+    private Etudiant etudiant;
+    private Path parcours;
+    private int niveauProgression;
+
+    public ProgressionEtudiant(Etudiant etudiant, Path parcours) {
+        this.etudiant = etudiant;
+        this.parcours = parcours;
+        this.niveauProgression = 0;
+    }
+
+    public Etudiant getEtudiant() {
+        return etudiant;
+    }
+
+    public Parcours getParcours() {
+        return parcours;
+    }
+
+    public int getNiveauProgression() {
+        return niveauProgression;
+    }
+
+    public void setNiveauProgression(int niveauProgression) {
+        this.niveauProgression = niveauProgression;
+    }
+
+    // Méthode pour valider un niveau et passer au suivant
+    public void validerNiveau() {
+        if (niveauProgression < parcours.getNbNiveaux()) {
+            niveauProgression++;
+        }
+    }
+}
